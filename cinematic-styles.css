@@ -627,8 +627,8 @@ body {
   background: rgba(245,234,213,.08);
 }
 .fs-footer {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; flex-wrap: wrap;
+  display: flex; flex-direction: column;
+  gap: 14px;
 }
 .fs-consent {
   display: flex; align-items: center; gap: 8px;
@@ -641,22 +641,152 @@ body {
 }
 .fs-btn {
   appearance: none; border: none; cursor: pointer;
+  position: relative; overflow: hidden;
+  width: 100%;
   background: linear-gradient(135deg, var(--ember-1), var(--ember-2));
-  color: var(--cream); padding: 12px 26px; border-radius: 100px;
-  font: 600 11px/1 "Manrope", sans-serif;
-  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--cream); padding: 16px 26px; border-radius: 100px;
+  font: 600 12px/1 "Manrope", sans-serif;
+  letter-spacing: .14em; text-transform: uppercase;
   transition: opacity .2s, transform .2s, box-shadow .3s;
   box-shadow: 0 4px 18px rgba(255,122,46,.25); white-space: nowrap;
 }
+.fs-btn span { position: relative; z-index: 1; }
+/* Left-to-right progress fill while sending */
+.fs-btn::before {
+  content: "";
+  position: absolute; top: 0; left: 0; bottom: 0;
+  width: 0%;
+  background: linear-gradient(135deg, #ffb054, var(--ember-3));
+  z-index: 0;
+}
+.fs-btn.sending::before { width: 92%; transition: width 1.6s cubic-bezier(.25,.6,.3,1); }
+.fs-btn.sent::before { width: 100%; transition: width .25s ease-out; }
 .fs-btn:hover { opacity: .9; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(255,122,46,.35); }
-.fs-btn:active { transform: scale(.96); }
-.fs-btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+.fs-btn:active { transform: scale(.99); }
+.fs-btn:disabled { cursor: wait; transform: none; opacity: 1; }
 .fs-success {
   display: none; text-align: center; padding: 14px;
   border-radius: 10px;
   background: rgba(255,122,46,.08); border: 1px solid rgba(255,122,46,.2);
   color: var(--ember-3); font-size: 14px; letter-spacing: .02em;
 }
+
+/* Slide-to-send control */
+.slide-send {
+  position: relative;
+  width: 100%; height: 58px;
+  border-radius: 100px;
+  overflow: hidden;
+  background: rgba(245,234,213,.06);
+  border: 1px solid var(--rule);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+.slide-send-fill {
+  position: absolute; top: 0; left: 0; bottom: 0;
+  width: 60px;
+  background: linear-gradient(135deg, var(--ember-1), var(--ember-2));
+  border-radius: 100px;
+  pointer-events: none;
+}
+.slide-send-label {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font: 600 12px/1 "Manrope", sans-serif;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink-soft);
+  pointer-events: none;
+}
+.slide-send-knob {
+  position: absolute; top: 4px; left: 4px;
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ember-3), var(--ember-1));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--bg);
+  cursor: grab;
+  touch-action: none;
+  box-shadow: 0 2px 14px rgba(255,122,46,.45);
+  will-change: transform;
+}
+.slide-send-knob:active { cursor: grabbing; }
+.slide-send-knob svg { animation: ss-nudge 1.8s ease-in-out infinite; }
+@keyframes ss-nudge {
+  0%, 100% { transform: translateX(0); opacity: 1; }
+  50% { transform: translateX(4px); opacity: .75; }
+}
+.slide-send.sending .slide-send-knob svg,
+.slide-send.sent .slide-send-knob svg { animation: none; }
+.slide-send.sent .slide-send-fill { width: 100% !important; }
+.slide-send.sent .slide-send-label {
+  color: var(--cream); opacity: 1 !important;
+}
+
+/* QR card — blue-black running ring */
+.qr-card {
+  position: relative; z-index: 0;
+  display: inline-flex; flex-direction: column; align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 22px 28px 18px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+/* Rotating blue-black conic ring */
+.qr-card::before {
+  content: "";
+  position: absolute; top: 50%; left: 50%;
+  width: 620px; height: 620px;
+  background: conic-gradient(
+    #060912 0deg,
+    #2a6fdb 30deg,
+    #7db4ff 55deg,
+    #cfe4ff 70deg,
+    #2a6fdb 95deg,
+    #060912 140deg,
+    #060912 180deg,
+    #1a4fae 210deg,
+    #5a93ff 235deg,
+    #060912 280deg,
+    #060912 360deg);
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: wa-spin 3.4s linear infinite, wa-twinkle 1.6s ease-in-out infinite;
+  z-index: -2;
+}
+/* Inner fill leaves a thin ring at the edge */
+.qr-card::after {
+  content: "";
+  position: absolute; inset: 2.5px;
+  background: #0c1018;
+  border-radius: 18px;
+  z-index: -1;
+}
+.qr-box {
+  background: var(--cream);
+  padding: 12px;
+  border-radius: 12px;
+  line-height: 0;
+}
+.qr-box svg {
+  display: block;
+  width: 150px; height: 150px;
+}
+.qr-label {
+  font: 600 11px/1.4 "Manrope", sans-serif;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--cream);
+  text-align: center;
+  max-width: 200px;
+}
+.qr-tap {
+  font: 400 12px/1.4 "Manrope", sans-serif;
+  color: #7db4ff;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(125,180,255,.5);
+  transition: color .2s, border-color .2s;
+}
+.qr-tap:hover { color: #cfe4ff; border-color: #cfe4ff; }
 
 /* WhatsApp button — twinkling blue ring */
 .whatsapp-btn {
