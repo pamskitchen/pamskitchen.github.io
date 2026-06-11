@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pamskitchen — Cinematic Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Tenor+Sans&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="cinematic-styles.css">
+</head>
+<body>
+
+<!-- ─── ATMOSPHERE ─── -->
+<div class="atmosphere" aria-hidden="true">
+  <div class="atm-base"></div>
+  <div class="ember ember-1"></div>
+  <div class="ember ember-2"></div>
+  <div class="ember ember-3"></div>
+  <div class="grain"></div>
+  <div class="vignette"></div>
+</div>
+
+<div class="page">
+
+<!-- ═══════════════════════════════════════
+     NAV
+     ═══════════════════════════════════════ -->
+<nav class="nav">
+  <div class="mark">
+    <img src="assets/logo.png" alt="Pamskitchen" />
+    <div class="wordmark">Pamskitchen<small>Delight to your home</small></div>
+  </div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     1. HERO — CURTAIN REVEAL
+     ═══════════════════════════════════════ -->
+<section class="hero-curtain" id="home">
+  <div class="hero-sticky">
+    <!-- Behind the curtain -->
+    <div class="hero-behind">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="assets/kitchen-video.mp4" type="video/mp4">
+      </video>
+      <img src="assets/halwa.jpg" alt="Rava Kesari, slow cooked" style="display:none;" />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          PAM'S<span class="ital">kitchen</span>
+        </h1>
+        <p class="hero-sub">Delight to your home · Humber Way SL3</p>
+        <div class="scroll-cue" id="scrollCue">
+          Scroll to enter
+          <span class="line"></span>
+        </div>
+      </div>
+      <!-- Photo label on hero image -->
+      <div class="photo-label" style="z-index: 6;">
+        <div class="script"><span class="ln">Rava</span><span class="ln">Kesari</span></div>
+        <div class="sub">Home Cooking</div>
+      </div>
+    </div>
+    <!-- Curtain panels -->
+    <div class="curtain-left" id="cLeft"><h2>PAM'S</h2></div>
+    <div class="curtain-right" id="cRight"><h2><em>kitchen</em></h2></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     2. MARQUEE DIVIDER
+     ═══════════════════════════════════════ -->
+<div class="marquee-band">
+  <div class="marquee-row" data-speed="1" data-direction="left">
+    <div class="marquee-content">
+      <span class="marquee-item">Spice<span class="dot"></span></span>
+      <span class="marquee-item">Soul<span class="dot"></span></span>
+      <span class="marquee-item">Fire<span class="dot"></span></span>
+      <span class="marquee-item">Home Cooking<span class="dot"></span></span>
+      <span class="marquee-item">Fresh Daily<span class="dot"></span></span>
+    </div>
+  </div>
+  <div class="marquee-row marquee-outline" data-speed="0.7" data-direction="right">
+    <div class="marquee-content">
+      <span class="marquee-item">Spice<span class="dot"></span></span>
+      <span class="marquee-item">Soul<span class="dot"></span></span>
+      <span class="marquee-item">Fire<span class="dot"></span></span>
+      <span class="marquee-item">Home Cooking<span class="dot"></span></span>
+      <span class="marquee-item">Fresh Daily<span class="dot"></span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     3. ACCORDION — TODAY'S FRESH
+     ═══════════════════════════════════════ -->
+<section class="accordion-section" id="today">
+  <div class="accordion-inner">
+    <div class="accordion-head">
+      <div class="eyebrow">Fresh this morning · 7 June</div>
+      <h2 class="section-h2">Straight from <em>today's</em> kitchen</h2>
+    </div>
+    <div class="accordion">
+      <div class="accordion-panel active">
+        <div class="panel-bg" style="background-image: url('assets/today-idli3.jpg');"></div>
+        <div class="panel-overlay"></div>
+        <div class="panel-vtitle">Rava Idli</div>
+        <div class="panel-content">
+          <div class="panel-num">01 · Steaming now</div>
+          <div class="panel-h3">Rava Idli</div>
+          <div class="panel-desc">Semolina batter fermented overnight, spooned into greased moulds and steamed until pillowy soft.</div>
+        </div>
+      </div>
+      <div class="accordion-panel">
+        <div class="panel-bg" style="background-image: url('assets/idli-fry.jpg');"></div>
+        <div class="panel-overlay"></div>
+        <div class="panel-vtitle">Idli Fry</div>
+        <div class="panel-content">
+          <div class="panel-num">02 · Pan-tossed</div>
+          <div class="panel-h3">Idli Fry</div>
+          <div class="panel-desc">Yesterday's idli cut and tempered with mustard, peanuts, chilli and curry leaf until the edges crisp.</div>
+        </div>
+      </div>
+      <div class="accordion-panel">
+        <div class="panel-bg" style="background-image: url('assets/lemon-rice.jpg');"></div>
+        <div class="panel-overlay"></div>
+        <div class="panel-vtitle">Lemon Rice</div>
+        <div class="panel-content">
+          <div class="panel-num">03 · Tiffin ready</div>
+          <div class="panel-h3">Lemon Rice</div>
+          <div class="panel-desc">Steamed rice tossed with turmeric, mustard seeds, peanuts and a bright squeeze of fresh lemon.</div>
+        </div>
+      </div>
+      <div class="accordion-panel">
+        <div class="panel-bg" style="background-image: url('assets/masala-vada.jpg');"></div>
+        <div class="panel-overlay"></div>
+        <div class="panel-vtitle">Masala Vada</div>
+        <div class="panel-content">
+          <div class="panel-num">04 · Fried fresh</div>
+          <div class="panel-h3">Masala Vada</div>
+          <div class="panel-desc">Chana dal coarse-ground with fennel, onion and curry leaf, fried into craggy golden discs.</div>
+        </div>
+      </div>
+      <div class="accordion-panel">
+        <div class="panel-bg" style="background-image: url('assets/mysore-bonda.jpg');"></div>
+        <div class="panel-overlay"></div>
+        <div class="panel-vtitle">Mysore Bonda</div>
+        <div class="panel-content">
+          <div class="panel-num">05 · Tea-time</div>
+          <div class="panel-h3">Mysore Bonda</div>
+          <div class="panel-desc">Fermented batter spooned into hot oil — airy golden spheres, crisp outside, cloud-soft inside.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     MARQUEE 2 — DISH NAMES
+     ═══════════════════════════════════════ -->
+<div class="marquee-band">
+  <div class="marquee-row" data-speed="0.6" data-direction="right">
+    <div class="marquee-content">
+      <span class="marquee-item">Chilli Paneer<span class="dot"></span></span>
+      <span class="marquee-item">Rava Kesari<span class="dot"></span></span>
+      <span class="marquee-item">Medu Vada<span class="dot"></span></span>
+      <span class="marquee-item">Beetroot Poori<span class="dot"></span></span>
+      <span class="marquee-item">Lemon Rice<span class="dot"></span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     4. HORIZONTAL SCROLL — DISH GALLERY
+     ═══════════════════════════════════════ -->
+<section class="hscroll-section" id="hSection" style="height: 600vh;">
+  <div class="hscroll-sticky">
+    <div class="hscroll-header">
+      <h2 class="section-h2" id="menu">From <em>the pot</em>, to your plate</h2>
+    </div>
+    <div class="hscroll-track" id="hTrack">
+      <div class="hscroll-card">
+        <div class="hscroll-card-bg" style="background-image: url('assets/chilli-paneer.jpg');"></div>
+        <div class="hscroll-card-overlay"></div>
+        <div class="hscroll-card-content">
+          <div class="hscroll-card-num">01 / Indo-Chinese</div>
+          <h3>Chilli <em>Paneer</em></h3>
+          <p>Cottage cheese seared crisp, tossed with capsicum, ginger and a glossy tomato-chilli glaze.</p>
+        </div>
+      </div>
+      <div class="hscroll-card hscroll-card--video" id="videoCard" style="cursor:pointer;">
+        <video class="hscroll-card-video" muted loop playsinline preload="auto">
+          <source src="assets/halwa-video.mp4" type="video/mp4">
+        </video>
+        <div class="hscroll-card-overlay"></div>
+        <div class="hscroll-card-content">
+          <div class="hscroll-card-num">02 / Fresh from the Kitchen</div>
+          <h3>Mango Carrot <em>Halwa</em></h3>
+          <p>Watch the making — click to hear the sizzle.</p>
+          <div class="video-hover-hint video-audio-toggle" id="videoAudioBtn">
+            <svg class="va-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+            <svg class="va-on" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+            <span class="va-label">Click for audio</span>
+          </div>
+        </div>
+      </div>
+      <div class="hscroll-card">
+        <div class="hscroll-card-bg" style="background-image: url('assets/lemon-rice.jpg');"></div>
+        <div class="hscroll-card-overlay"></div>
+        <div class="hscroll-card-content">
+          <div class="hscroll-card-num">03 / Vegan</div>
+          <h3>Lemon <em>Rice</em></h3>
+          <p>Steamed rice tossed warm with turmeric, mustard seeds, peanuts and curry leaf, lifted with fresh lemon.</p>
+        </div>
+      </div>
+      <div class="hscroll-card">
+        <div class="hscroll-card-bg" style="background-image: url('assets/masala-vada.jpg');"></div>
+        <div class="hscroll-card-overlay"></div>
+        <div class="hscroll-card-content">
+          <div class="hscroll-card-num">04 / Vegan</div>
+          <h3>Masala <em>Vada</em></h3>
+          <p>Soaked chana dal coarse-ground with fennel, onion and curry leaf, fried into craggy golden discs.</p>
+        </div>
+      </div>
+      <div class="hscroll-card">
+        <div class="hscroll-card-bg" style="background-image: url('assets/mysore-bonda.jpg');"></div>
+        <div class="hscroll-card-overlay"></div>
+        <div class="hscroll-card-content">
+          <div class="hscroll-card-num">05 / Vegetarian</div>
+          <h3>Mysore <em>Bonda</em></h3>
+          <p>Fermented batter spooned into hot oil — airy golden spheres, crisp shell, cloud-soft inside.</p>
+        </div>
+      </div>
+      <div class="hscroll-card">
+        <div class="hscroll-card-bg" style="background-image: url('assets/idli-fry.jpg');"></div>
+        <div class="hscroll-card-overlay"></div>
+        <div class="hscroll-card-content">
+          <div class="hscroll-card-num">06 / Vegetarian</div>
+          <h3>Idli <em>Fry</em></h3>
+          <p>Steamed idli cut and pan-tossed with mustard, peanuts, chilli and curry leaf until the edges crisp.</p>
+        </div>
+      </div>
+      <div class="hscroll-card">
+        <div class="hscroll-card-bg" style="background-image: url('assets/medu-vada.jpg');"></div>
+        <div class="hscroll-card-overlay"></div>
+        <div class="hscroll-card-content">
+          <div class="hscroll-card-num">07 / Vegan</div>
+          <h3>Medu <em>Vada</em></h3>
+          <p>South Indian urad dal doughnuts — feather-light inside, lace-crisp outside. Served with chutney.</p>
+        </div>
+      </div>
+      <div class="hscroll-card">
+        <div class="hscroll-card-bg" style="background-image: url('assets/beetroot-puri.jpg');"></div>
+        <div class="hscroll-card-overlay"></div>
+        <div class="hscroll-card-content">
+          <div class="hscroll-card-num">08 / Vegan</div>
+          <h3>Beetroot <em>Poori</em></h3>
+          <p>Wheat dough kneaded with beetroot, fried in fresh oil until they puff up rose-pink.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-progress" id="hProgress">
+  <div class="h-progress-bar"><div class="h-progress-fill" id="hFill"></div></div>
+  <div class="h-progress-label" id="hLabel">1 / 8</div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     5. TEXT MASK REVEAL — STORY
+     ═══════════════════════════════════════ -->
+<section class="mask-section" id="story">
+  <div class="mask-sticky">
+    <div class="mask-bg">
+      <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
+        <source src="assets/kitchen-video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="mask-overlay">
+      <div class="mask-text">PAM'S<br>KITCHEN</div>
+    </div>
+    <div class="mask-reveal">
+      <div class="mask-text-filled">PAM'S<br>KITCHEN</div>
+    </div>
+    <div class="mask-subtext">
+      <p>One pot. One plate. No shortcuts. Every meal is cooked by hand, in single servings, the morning it's eaten. Stocks simmer overnight. Bread proves in the window. Nothing is reheated, nothing is frozen, nothing leaves the kitchen if it wouldn't be served to family.</p>
+      <span class="sig">— Pamskitchen</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     MARQUEE 3
+     ═══════════════════════════════════════ -->
+<div class="marquee-band">
+  <div class="marquee-row marquee-outline" data-speed="0.5" data-direction="left">
+    <div class="marquee-content">
+      <span class="marquee-item">Order by 10am<span class="dot"></span></span>
+      <span class="marquee-item">Same-day pickup<span class="dot"></span></span>
+      <span class="marquee-item">Delivery within 5 miles<span class="dot"></span></span>
+      <span class="marquee-item">WhatsApp<span class="dot"></span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     7. CONTACT — TEXT SCRAMBLE
+     ═══════════════════════════════════════ -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="eyebrow">Get in touch</div>
+      <div class="scramble-headline" data-scramble="COME HUNGRY" style="white-space: nowrap;">COME HUNGRY</div>
+      <p class="contact-sub">
+        Slip your address in the pot — we'll send the weekly menu every Sunday evening,
+        long before the pickup slots fill up.
+      </p>
+      <!-- Formspree contact form — replace xyzabcde with your real Formspree form ID -->
+      <form id="fsForm" class="fs-form" action="https://formspree.io/f/mvznqplb" method="POST">
+        <div class="fs-row">
+          <div class="fs-field">
+            <label for="fsName">Name</label>
+            <input type="text" id="fsName" name="name" placeholder="Your name" required />
+          </div>
+          <div class="fs-field">
+            <label for="fsEmail">Email</label>
+            <input type="email" id="fsEmail" name="email" placeholder="your@email.com" required />
+          </div>
+        </div>
+        <div class="fs-field">
+          <label for="fsMsg">Message <span class="fs-optional">(optional)</span></label>
+          <textarea id="fsMsg" name="message" rows="3" placeholder="I'd love the weekly menu…"></textarea>
+        </div>
+        <div class="fs-footer">
+          <label class="fs-consent">
+            <input type="checkbox" name="consent" required />
+            <span>I agree to receive the weekly menu</span>
+          </label>
+          <button type="submit" class="fs-btn" id="fsBtn">Send ✦</button>
+        </div>
+        <div class="fs-success" id="fsSuccess">Thank you — menu on its way Sunday ✦</div>
+      </form>
+
+      <a href="https://wa.me/4474944607622?text=Hi%20Pam%2C%20I%27d%20like%20to%20see%20this%20week%27s%20menu%20please!" target="_blank" rel="noopener" class="whatsapp-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785c-1.813 0-3.593-.488-5.15-1.41l-.37-.218-3.823 1.004 1.02-3.727-.24-.382A9.685 9.685 0 012.24 12.05C2.24 6.635 6.635 2.24 12.05 2.24c2.621 0 5.086 1.021 6.94 2.876a9.747 9.747 0 012.876 6.94c0 5.415-4.395 9.81-9.81 9.81l-.006-.08zm8.36-18.15A11.94 11.94 0 0012.05 0C5.495 0 .1 5.395.1 11.95a11.9 11.9 0 001.6 5.965L0 24l6.26-1.645a11.9 11.9 0 005.79 1.49h.005c6.555 0 11.95-5.395 11.95-11.95a11.87 11.87 0 00-3.5-8.46z"/></svg>
+        <span>WhatsApp us for the menu</span>
+      </a>
+    </div>
+    <div class="contact-right">
+      <div class="contact-cols">
+        <div class="col">
+          <h4>Order</h4>
+          <a href="tel:+4474944607622">+44 7494 460 7622</a>
+          <p>WhatsApp by 10am</p>
+        </div>
+        <div class="col">
+          <h4>Email</h4>
+          <a href="#" id="obfEmail" rel="nofollow">email us</a>
+          <p>Via secure form</p>
+        </div>
+        <div class="col">
+          <h4>Kitchen</h4>
+          <p>Humber Way</p>
+          <p>SL3</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="mark">Pamskitchen · Delight to your home</div>
+  <div>© 2026 · Cooked fresh, daily</div>
+</footer>
+
+</div><!-- .page -->
+
+<!-- 🔊 Intro audio — plays during hero, fades out as you scroll past -->
+<button id="audioToggle" aria-label="Toggle music" class="audio-fab">
+  <div class="audio-fab-ring"></div>
+  <div class="audio-fab-icon" id="audioIcon">
+    <svg class="icon-off" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18V5l12-2v13"></path>
+      <circle cx="6" cy="18" r="3"></circle>
+      <circle cx="18" cy="16" r="3"></circle>
+      <line x1="2" y1="2" x2="22" y2="22" stroke-width="2"></line>
+    </svg>
+    <svg class="icon-on" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+      <path d="M9 18V5l12-2v13"></path>
+      <circle cx="6" cy="18" r="3"></circle>
+      <circle cx="18" cy="16" r="3"></circle>
+    </svg>
+  </div>
+  <div class="audio-fab-bars" id="audioBars">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</button>
+
+<style>
+.audio-fab {
+  position: fixed; bottom: 24px; right: 24px; z-index: 60;
+  width: 52px; height: 52px; border-radius: 50%;
+  border: none; cursor: pointer;
+  background: rgba(20, 16, 12, .85);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .4s;
+  box-shadow: 0 4px 20px rgba(0,0,0,.4), 0 0 0 1px rgba(245,234,213,.1);
+  overflow: visible;
+}
+.audio-fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(255,122,46,.25), 0 0 0 1px rgba(255,122,46,.25);
+}
+.audio-fab:active { transform: scale(.95); }
+
+/* Pulsing ring */
+.audio-fab-ring {
+  position: absolute; inset: -6px; border-radius: 50%;
+  border: 1.5px solid rgba(255,122,46,.3);
+  opacity: 0; transform: scale(.8);
+  transition: opacity .4s, transform .4s;
+}
+.audio-fab.playing .audio-fab-ring {
+  opacity: 1; transform: scale(1);
+  animation: fab-pulse 2s ease-in-out infinite;
+}
+@keyframes fab-pulse {
+  0%, 100% { transform: scale(1); opacity: .6; }
+  50% { transform: scale(1.2); opacity: 0; }
+}
+
+/* Icon */
+.audio-fab-icon {
+  position: relative; z-index: 2;
+  color: var(--ink-soft);
+  transition: color .3s;
+  display: flex; align-items: center; justify-content: center;
+}
+.audio-fab.playing .audio-fab-icon { color: var(--ember-3); }
+
+/* Equalizer bars */
+.audio-fab-bars {
+  position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 2px; align-items: flex-end;
+  height: 8px; opacity: 0; transition: opacity .3s;
+}
+.audio-fab.playing .audio-fab-bars { opacity: 1; }
+.audio-fab-bars span {
+  width: 3px; border-radius: 1px;
+  background: var(--ember-1);
+}
+.audio-fab-bars span:nth-child(1) { height: 3px; animation: bar1 .8s ease-in-out infinite; }
+.audio-fab-bars span:nth-child(2) { height: 6px; animation: bar2 .6s ease-in-out infinite .1s; }
+.audio-fab-bars span:nth-child(3) { height: 4px; animation: bar3 .7s ease-in-out infinite .2s; }
+.audio-fab-bars span:nth-child(4) { height: 5px; animation: bar4 .9s ease-in-out infinite .05s; }
+@keyframes bar1 { 0%,100% { height:3px } 50% { height:8px } }
+@keyframes bar2 { 0%,100% { height:6px } 50% { height:3px } }
+@keyframes bar3 { 0%,100% { height:4px } 50% { height:7px } }
+@keyframes bar4 { 0%,100% { height:5px } 50% { height:2px } }
+
+/* Faded state */
+.audio-fab.faded { opacity: .45; }
+</style>
+
+<script src="cinematic-engine.js"></script>
+<script>
+(function(){
+  var btn = document.getElementById('audioToggle');
+  var heroSection = document.querySelector('.hero-curtain');
+  var playing = false;
+  var audioReady = false;
+  var userMuted = false;
+  var introEnded = false;
+  var audioCtx = null;
+  var combinedBuffer = null;
+  var sourceNode = null;
+  var gainNode = null;
+  var maxVolume = 0.35;
+
+  var SEGMENTS = [
+    [32, 36],
+    [83, 85],
+    [120, 123],
+    [137, 157]
+  ];
+
+  var XFADE = 0.25;
+  var ECHO_DELAY = 0.18;
+  var ECHO_FEEDBACK = 0.3;
+  var ECHO_MIX = 0.25;
+
+  function extractAndCombine(sourceBuffer) {
+    var sr = sourceBuffer.sampleRate;
+    var channels = sourceBuffer.numberOfChannels;
+    var xfadeSamples = Math.round(XFADE * sr);
+    var segSamples = [];
+    for (var si = 0; si < SEGMENTS.length; si++) {
+      var s = Math.round(SEGMENTS[si][0] * sr);
+      var e = Math.min(Math.round(SEGMENTS[si][1] * sr), sourceBuffer.length);
+      segSamples.push([s, e, e - s]);
+    }
+    var totalSamples = 0;
+    for (var i = 0; i < segSamples.length; i++) {
+      totalSamples += segSamples[i][2];
+      if (i > 0) {
+        var overlap = Math.min(xfadeSamples, Math.floor(segSamples[i-1][2] / 2), Math.floor(segSamples[i][2] / 2));
+        totalSamples -= overlap;
+      }
+    }
+    var combined = audioCtx.createBuffer(channels, totalSamples, sr);
+    for (var ch = 0; ch < channels; ch++) {
+      var srcData = sourceBuffer.getChannelData(ch);
+      var outData = combined.getChannelData(ch);
+      var writePos = 0;
+      for (var i = 0; i < segSamples.length; i++) {
+        var s = segSamples[i][0], e = segSamples[i][1], len = segSamples[i][2];
+        var fadeIn = Math.min(xfadeSamples, Math.floor(len / 2));
+        var fadeOut = Math.min(xfadeSamples, Math.floor(len / 2));
+        if (i > 0) {
+          var overlap = Math.min(xfadeSamples, Math.floor(segSamples[i-1][2] / 2), Math.floor(len / 2));
+          writePos -= overlap;
+        }
+        for (var j = 0; j < len; j++) {
+          var sample = srcData[s + j];
+          if (j < fadeIn) sample *= j / fadeIn;
+          if (j >= len - fadeOut) sample *= (len - j) / fadeOut;
+          outData[writePos + j] = (outData[writePos + j] || 0) + sample;
+        }
+        writePos += len;
+      }
+    }
+    return applyEcho(combined);
+  }
+
+  function applyEcho(buffer) {
+    var sr = buffer.sampleRate;
+    var channels = buffer.numberOfChannels;
+    var delaySamples = Math.round(ECHO_DELAY * sr);
+    var tailSamples = Math.round(delaySamples * 4);
+    var outLen = buffer.length + tailSamples;
+    var echoBuffer = audioCtx.createBuffer(channels, outLen, sr);
+    for (var ch = 0; ch < channels; ch++) {
+      var src = buffer.getChannelData(ch);
+      var out = echoBuffer.getChannelData(ch);
+      for (var i = 0; i < src.length; i++) out[i] = src[i];
+      for (var i = delaySamples; i < outLen; i++) out[i] += out[i - delaySamples] * ECHO_FEEDBACK;
+      for (var i = 0; i < outLen; i++) {
+        var dry = i < src.length ? src[i] : 0;
+        out[i] = dry * (1 - ECHO_MIX) + out[i] * ECHO_MIX;
+      }
+      for (var i = 0; i < outLen; i++) out[i] = Math.max(-1, Math.min(1, out[i]));
+    }
+    return echoBuffer;
+  }
+
+  function startPlayback() {
+    if (!combinedBuffer || !audioCtx) return;
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    stopPlayback(true);
+    sourceNode = audioCtx.createBufferSource();
+    sourceNode.buffer = combinedBuffer;
+    sourceNode.loop = true;
+    gainNode = audioCtx.createGain();
+    gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+    gainNode.gain.linearRampToValueAtTime(maxVolume, audioCtx.currentTime + 1.5);
+    sourceNode.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+    sourceNode.start(0);
+    playing = true;
+    btn.classList.add('playing');
+    btn.classList.remove('faded');
+    document.querySelector('.icon-off').style.display = 'none';
+    document.querySelector('.icon-on').style.display = 'block';
+  }
+
+  function stopPlayback(immediate) {
+    if (sourceNode && gainNode && !immediate) {
+      try {
+        gainNode.gain.cancelScheduledValues(audioCtx.currentTime);
+        gainNode.gain.setValueAtTime(gainNode.gain.value, audioCtx.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1.5);
+        var sn = sourceNode;
+        setTimeout(function() { try { sn.stop(); } catch(e) {} }, 1600);
+      } catch(e) { try { sourceNode.stop(); } catch(e2) {} }
+    } else if (sourceNode) {
+      try { sourceNode.stop(); } catch(e) {}
+    }
+    sourceNode = null;
+    playing = false;
+    btn.classList.remove('playing');
+    document.querySelector('.icon-off').style.display = 'block';
+    document.querySelector('.icon-on').style.display = 'none';
+  }
+
+  // Scroll-linked volume: fades out as hero scrolls away
+  function updateScrollVolume() {
+    if (!playing || !gainNode || !heroSection || userMuted || introEnded) return;
+    var rect = heroSection.getBoundingClientRect();
+    var heroH = heroSection.offsetHeight;
+    var scrolled = -rect.top / heroH;
+    if (scrolled < 0) scrolled = 0;
+    if (scrolled > 1) scrolled = 1;
+    var vol;
+    if (scrolled < 0.5) {
+      vol = maxVolume;
+    } else {
+      vol = maxVolume * (1 - (scrolled - 0.5) * 2);
+    }
+    vol = Math.max(0, Math.min(maxVolume, vol));
+    try { gainNode.gain.setValueAtTime(vol, audioCtx.currentTime); } catch(e) {}
+    if (scrolled >= 1 && playing) {
+      introEnded = true;
+      stopPlayback(false);
+      btn.classList.add('faded');
+    }
+  }
+
+  window.addEventListener('scroll', updateScrollVolume, { passive: true });
+
+  async function loadAudio() {
+    try {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      var resp = await fetch('assets/menu-music.mp3');
+      if (!resp.ok) return;
+      var arrayBuf = await resp.arrayBuffer();
+      var decoded = await audioCtx.decodeAudioData(arrayBuf);
+      combinedBuffer = extractAndCombine(decoded);
+      audioReady = true;
+    } catch(err) {
+      console.error('Audio load error:', err);
+    }
+  }
+
+  // ── Auto-play on first user interaction ──
+  var autoStarted = false;
+  async function autoStart() {
+    if (autoStarted) return;
+    autoStarted = true;
+    document.removeEventListener('click', autoStart);
+    document.removeEventListener('scroll', autoStart);
+    document.removeEventListener('touchstart', autoStart);
+    if (!audioReady) {
+      await loadAudio();
+      if (!audioReady) return;
+    }
+    startPlayback();
+  }
+  document.addEventListener('click', autoStart, { once: false });
+  document.addEventListener('scroll', autoStart, { once: false, passive: true });
+  document.addEventListener('touchstart', autoStart, { once: false, passive: true });
+
+  btn.addEventListener('click', async function(e){
+    e.stopPropagation();
+    if (!audioReady) {
+      document.querySelector('.icon-off').style.display = 'none';
+      document.querySelector('.icon-on').style.display = 'none';
+      btn.classList.add('playing');
+      await loadAudio();
+      btn.classList.remove('playing');
+      if (!audioReady) {
+        document.querySelector('.icon-off').style.display = 'block';
+        return;
+      }
+    }
+    autoStarted = true;
+    if (playing) {
+      userMuted = true;
+      stopPlayback(false);
+    } else {
+      userMuted = false;
+      introEnded = false;
+      btn.classList.remove('faded');
+      startPlayback();
+    }
+  });
+
+  // ── Video card: click to play MP3 audio over video ──
+  var videoCard = document.getElementById('videoCard');
+  var videoAudioBtn = document.getElementById('videoAudioBtn');
+  var videoAudioPlaying = false;
+  var videoSourceNode = null;
+  var videoGainNode = null;
+
+  function stopVideoAudio() {
+    if (!videoAudioPlaying) return;
+    if (videoSourceNode && videoGainNode && audioCtx) {
+      try {
+        videoGainNode.gain.cancelScheduledValues(audioCtx.currentTime);
+        videoGainNode.gain.setValueAtTime(videoGainNode.gain.value, audioCtx.currentTime);
+        videoGainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.6);
+        var sn = videoSourceNode;
+        setTimeout(function() { try { sn.stop(); } catch(e) {} }, 700);
+      } catch(e) { try { videoSourceNode.stop(); } catch(e2) {} }
+    }
+    videoSourceNode = null;
+    videoAudioPlaying = false;
+    if (videoAudioBtn) {
+      videoAudioBtn.querySelector('.va-off').style.display = 'block';
+      videoAudioBtn.querySelector('.va-on').style.display = 'none';
+      videoAudioBtn.querySelector('.va-label').textContent = 'Click for audio';
+    }
+  }
+
+  if (videoCard) {
+    var vid = videoCard.querySelector('video');
+    if (vid) {
+      vid.play().catch(function(){});
+    }
+
+    // Auto-stop audio when video card scrolls out of view
+    window.addEventListener('scroll', function() {
+      if (!videoAudioPlaying) return;
+      var rect = videoCard.getBoundingClientRect();
+      // If card is fully off-screen, stop audio
+      if (rect.right < -100 || rect.left > window.innerWidth + 100 ||
+          rect.bottom < -100 || rect.top > window.innerHeight + 100) {
+        stopVideoAudio();
+      }
+    }, { passive: true });
+
+    videoCard.addEventListener('click', async function(e) {
+      e.stopPropagation();
+
+      if (!audioReady) {
+        await loadAudio();
+        if (!audioReady) return;
+      }
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+
+      if (videoAudioPlaying) {
+        stopVideoAudio();
+      } else {
+        if (videoSourceNode) {
+          try { videoSourceNode.stop(); } catch(ex) {}
+        }
+        videoSourceNode = audioCtx.createBufferSource();
+        videoSourceNode.buffer = combinedBuffer;
+        videoSourceNode.loop = true;
+        videoGainNode = audioCtx.createGain();
+        videoGainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+        videoGainNode.gain.linearRampToValueAtTime(0.5, audioCtx.currentTime + 0.5);
+        videoSourceNode.connect(videoGainNode);
+        videoGainNode.connect(audioCtx.destination);
+        videoSourceNode.start(0);
+        videoAudioPlaying = true;
+        if (videoAudioBtn) {
+          videoAudioBtn.querySelector('.va-off').style.display = 'none';
+          videoAudioBtn.querySelector('.va-on').style.display = 'block';
+          videoAudioBtn.querySelector('.va-label').textContent = 'Audio on';
+        }
+      }
+    });
+  }
+})();
+
+// ── Formspree AJAX submission ──
+(function () {
+  var form = document.getElementById('fsForm');
+  var btn  = document.getElementById('fsBtn');
+  var succ = document.getElementById('fsSuccess');
+  if (!form) return;
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      var data = new FormData(form);
+      var res  = await fetch(form.action, {
+        method: 'POST', body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        succ.style.display = 'block';
+      } else {
+        var json = await res.json();
+        var msg  = (json.errors || []).map(function(e){ return e.message; }).join(', ') || 'Something went wrong.';
+        alert('Could not send: ' + msg);
+        btn.disabled = false; btn.textContent = 'Send ✦';
+      }
+    } catch (err) {
+      alert('Network error — please try WhatsApp instead.');
+      btn.disabled = false; btn.textContent = 'Send ✦';
+    }
+  });
+})();
+
+// ── Email obfuscation: assemble address at runtime so bots can't scrape it ──
+(function () {
+  var link = document.getElementById('obfEmail');
+  if (!link) return;
+  // Pieces stored reversed + split so the address never appears in source
+  var p1 = 'nehctiksmap'.split('').reverse().join('');
+  var p2 = 'moc.kooltuo'.split('').reverse().join('');
+  var addr = p1 + '\u0040' + p2;
+  // Only build the real link on human interaction (hover/touch/focus)
+  function reveal() {
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+    link.removeEventListener('mouseenter', reveal);
+    link.removeEventListener('touchstart', reveal);
+    link.removeEventListener('focus', reveal);
+  }
+  link.addEventListener('mouseenter', reveal);
+  link.addEventListener('touchstart', reveal, { passive: true });
+  link.addEventListener('focus', reveal);
+  // Fallback: clicking before hover still works
+  link.addEventListener('click', function (e) {
+    if (link.getAttribute('href') === '#') {
+      e.preventDefault();
+      reveal();
+      window.location.href = link.href;
+    }
+  });
+})();
+</script>
+</body>
+</html>
