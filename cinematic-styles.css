@@ -871,6 +871,28 @@ body {
   font-size: 16px; letter-spacing: .02em; text-transform: none; color: var(--ink-soft);
 }
 
+/* Live visit counter */
+.visit-counter {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 10px; letter-spacing: .26em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.visit-counter .vc-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--ember-1);
+  box-shadow: 0 0 8px rgba(255,122,46,.7);
+  animation: vc-pulse 2.4s ease-in-out infinite;
+}
+@keyframes vc-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .45; transform: scale(.8); }
+}
+.visit-counter .vc-num {
+  color: var(--amber);
+  font-variant-numeric: tabular-nums;
+}
+.visit-counter .vc-sep { color: var(--ink-faint); }
+
 /* ═══════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════ */

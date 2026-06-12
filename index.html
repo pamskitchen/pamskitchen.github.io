@@ -387,6 +387,12 @@
 
 <footer class="footer">
   <div class="mark">Pamskitchen · Delight to your home</div>
+  <div class="visit-counter" id="visitCounter" hidden>
+    <span class="vc-dot" aria-hidden="true"></span>
+    <span class="vc-num" id="vcViews">0</span>&nbsp;visits
+    <span class="vc-sep" id="vcCountrySep" hidden>·</span>
+    <span id="vcCountryWrap" hidden>enjoyed from&nbsp;<span class="vc-num" id="vcCountries">0</span>&nbsp;countries</span>
+  </div>
   <div>© 2026 Pamsit Ltd / Pamskitchen · Cooked fresh, daily · All rights reserved</div>
 </footer>
 
@@ -395,6 +401,32 @@
 <!-- GoatCounter analytics — privacy-friendly, no cookies -->
 <script data-goatcounter="https://pamskitchen.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+
+<!-- Live visit counter in footer (GoatCounter public counter API) -->
+<script>
+(function () {
+  // ✎ EDIT BY HAND: number of countries from your GoatCounter dashboard (Locations panel).
+  // Set to 0 to hide the countries line entirely.
+  var COUNTRIES = 0;
+
+  var box = document.getElementById('visitCounter');
+  if (!box) return;
+  if (COUNTRIES > 0) {
+    document.getElementById('vcCountries').textContent = COUNTRIES;
+    document.getElementById('vcCountryWrap').hidden = false;
+    document.getElementById('vcCountrySep').hidden = false;
+  }
+  fetch('https://pamskitchen.goatcounter.com/counter/TOTAL.json')
+    .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+    .then(function (j) {
+      var n = parseInt(String(j.count).replace(/[^0-9]/g, ''), 10);
+      if (isNaN(n)) throw 0;
+      document.getElementById('vcViews').textContent = n.toLocaleString('en-GB');
+      box.hidden = false;
+    })
+    .catch(function () { /* counter unavailable — stay hidden, never break the page */ });
+})();
+</script>
 
 <!-- QR code generator (local-friendly, tiny) -->
 <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
