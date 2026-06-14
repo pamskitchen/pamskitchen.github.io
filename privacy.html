@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Privacy Policy — Pamskitchen</title>
+<meta name="description" content="How Pamskitchen collects, uses, and protects your personal data." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0705; --bg-warm:#14100c;
+  --ember-1:#ff7a2e; --ember-2:#d94915; --ember-3:#ff9a3c;
+  --amber:#e8a86b; --cream:#f3e7d2; --ink:#f5ead5;
+  --ink-soft:rgba(245,234,213,.62); --ink-faint:rgba(245,234,213,.34);
+  --rule:rgba(245,234,213,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font:400 16px/1.7 "Manrope",ui-sans-serif,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+.atmosphere{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.atm-base{position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255,122,46,.07), transparent 60%),
+    radial-gradient(ellipse 100% 60% at 50% 120%, rgba(217,73,21,.06), transparent 70%);
+}
+
+/* Top bar */
+.topbar{
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:28px 40px;border-bottom:1px solid var(--rule);
+}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.brand img{width:44px;height:44px;border-radius:50%;background:var(--cream);padding:3px;object-fit:contain;
+  box-shadow:0 8px 24px rgba(0,0,0,.4),0 0 0 1px rgba(245,234,213,.18);}
+.brand .wm{font-family:"Cormorant Garamond",serif;font-size:22px;letter-spacing:.01em;color:var(--cream);line-height:1;}
+.brand .wm small{display:block;font-family:"Manrope",sans-serif;font-size:9px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink-faint);margin-top:4px;}
+.back-link{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
+  text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  padding:10px 18px;border:1px solid var(--rule);border-radius:100px;transition:border-color .25s,color .25s;
+}
+.back-link:hover{border-color:rgba(255,154,60,.4);color:var(--cream);}
+
+/* Document */
+.doc{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:72px 40px 100px;}
+.eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ember-3);margin-bottom:18px;}
+h1{
+  font-family:"Cormorant Garamond",serif;font-weight:300;
+  font-size:clamp(40px,7vw,68px);line-height:1.02;letter-spacing:.01em;color:var(--cream);
+  margin-bottom:18px;
+}
+h1 em{font-style:italic;color:var(--amber);}
+.updated{font-size:13px;color:var(--ink-faint);letter-spacing:.04em;margin-bottom:8px;}
+.intro{
+  font-family:"Cormorant Garamond",serif;font-style:italic;
+  font-size:clamp(19px,2.4vw,24px);line-height:1.5;color:var(--ink-soft);
+  margin:34px 0 10px;text-wrap:pretty;
+}
+.rule{height:1px;background:var(--rule);margin:48px 0;}
+
+section{margin-bottom:44px;}
+h2{
+  font-family:"Cormorant Garamond",serif;font-weight:400;
+  font-size:27px;color:var(--cream);margin-bottom:8px;
+  display:flex;align-items:baseline;gap:14px;
+}
+h2 .n{
+  font-family:"Manrope",sans-serif;font-size:12px;font-weight:600;
+  color:var(--ember-3);letter-spacing:.1em;
+}
+h3{font-size:15px;font-weight:600;color:var(--amber);margin:22px 0 6px;letter-spacing:.01em;}
+p{color:var(--ink-soft);margin-bottom:14px;text-wrap:pretty;}
+p strong{color:var(--ink);font-weight:600;}
+a{color:var(--ember-3);text-decoration:none;border-bottom:1px solid rgba(255,154,60,.3);transition:border-color .2s;}
+a:hover{border-color:var(--ember-3);}
+ul{list-style:none;margin:14px 0 18px;display:flex;flex-direction:column;gap:11px;}
+li{position:relative;padding-left:26px;color:var(--ink-soft);}
+li::before{content:"";position:absolute;left:4px;top:10px;width:6px;height:6px;border-radius:50%;
+  background:var(--ember-2);box-shadow:0 0 8px rgba(255,122,46,.5);}
+li strong{color:var(--ink);font-weight:600;}
+
+/* Callout */
+.callout{
+  background:rgba(245,234,213,.04);border:1px solid var(--rule);
+  border-radius:14px;padding:22px 24px;margin:24px 0;
+}
+.callout p:last-child{margin-bottom:0;}
+.callout .tag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ember-3);
+  display:block;margin-bottom:8px;}
+
+/* Footer */
+.foot{border-top:1px solid var(--rule);padding:36px 40px;text-align:center;position:relative;z-index:1;}
+.foot p{font-size:12px;letter-spacing:.04em;color:var(--ink-faint);margin:0;}
+.foot a{color:var(--ink-soft);border:none;}
+</style>
+</head>
+<body>
+
+<div class="atmosphere" aria-hidden="true"><div class="atm-base"></div></div>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <img src="assets/logo.png" alt="Pamskitchen" />
+    <span class="wm">Pamskitchen<small>Delight to your home</small></span>
+  </a>
+  <a class="back-link" href="index.html">← Back to site</a>
+</header>
+
+<main class="doc">
+  <div class="eyebrow">Pamskitchen</div>
+  <h1>Privacy <em>Policy</em></h1>
+  <p class="updated">Last updated: 14 June 2026</p>
+
+  <p class="intro">Pamskitchen is a small home kitchen. We collect as little as possible, never sell your details, and only ever use them to cook for you and reply to you.</p>
+
+  <div class="rule"></div>
+
+  <section>
+    <h2><span class="n">01</span> Who we are</h2>
+    <p>This website is operated by <strong>Pamsit Ltd</strong>, trading as <strong>Pamskitchen</strong>, based at Humber Way, SL3, United Kingdom. For any privacy question, you can reach us through the <a href="index.html#contact">contact form</a> on our site or by WhatsApp.</p>
+    <p>For the purposes of UK GDPR and the Data Protection Act 2018, Pamsit Ltd is the <strong>data controller</strong> for the personal data described below.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span> What we collect</h2>
+
+    <h3>When you use the contact form</h3>
+    <p>If you fill in our enquiry form, we collect the <strong>name</strong>, <strong>email address</strong>, and any <strong>message</strong> you choose to send, along with your consent to receive our weekly menu. This is processed for us by Formspree (see “Who we share with” below) and delivered to our inbox.</p>
+
+    <h3>When you message us on WhatsApp</h3>
+    <p>Tapping or scanning our WhatsApp QR code opens <strong>your own WhatsApp</strong> with a pre-written message. If you choose to send it, your WhatsApp display name and phone number reach us the same way any WhatsApp message would. We never store your number in a database — it simply appears in our WhatsApp chats. WhatsApp’s own handling of your data is governed by its <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener">privacy policy</a>.</p>
+
+    <h3>Anonymous visit statistics</h3>
+    <p>We use <strong>GoatCounter</strong>, a privacy-friendly analytics tool, to understand how many people visit and roughly which countries they come from. It does <strong>not</strong> use cookies and does <strong>not</strong> store your IP address or any data that identifies you personally. The numbers we see are aggregated and anonymous.</p>
+
+    <div class="callout">
+      <span class="tag">In plain terms</span>
+      <p>No cookies. No tracking across other websites. No IP addresses kept. No selling your data — ever.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">03</span> Why we use it &amp; our lawful basis</h2>
+    <ul>
+      <li><strong>To reply to your enquiry and send the menu you asked for</strong> — based on your consent, which you give by ticking the box and submitting the form.</li>
+      <li><strong>To take and fulfil your food orders</strong> — based on our taking steps at your request and performing our agreement with you.</li>
+      <li><strong>To keep our website running and improve it</strong> — based on our legitimate interest in understanding anonymous visitor numbers.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span> Who we share it with</h2>
+    <p>We don’t sell or rent your data to anyone. We use a small number of trusted service providers purely to run the site:</p>
+    <ul>
+      <li><strong>Formspree</strong> — receives and forwards contact-form submissions. See the <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Formspree privacy policy</a>.</li>
+      <li><strong>GoatCounter</strong> — provides anonymous, cookie-free visit statistics. See the <a href="https://www.goatcounter.com/help/privacy" target="_blank" rel="noopener">GoatCounter privacy statement</a>.</li>
+      <li><strong>GitHub Pages</strong> — hosts the website files and may process standard server logs to deliver pages securely.</li>
+    </ul>
+    <p>We may also disclose information if required to do so by law.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">05</span> How long we keep it</h2>
+    <p>We keep enquiry and order messages only as long as needed to serve you and to keep sensible business records, then delete them. WhatsApp conversations remain in our WhatsApp account until we clear them. Anonymous visit statistics contain nothing that identifies you.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">06</span> Your rights</h2>
+    <p>Under UK data protection law you have the right to <strong>access</strong> the personal data we hold about you, to have it <strong>corrected</strong> or <strong>deleted</strong>, to <strong>withdraw consent</strong> at any time, and to <strong>object</strong> to or restrict our use of it. To exercise any of these, just contact us — we’ll respond within one month.</p>
+    <p>If you’re unhappy with how we’ve handled your data, you can complain to the UK’s Information Commissioner’s Office at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">07</span> Children</h2>
+    <p>Our site and service are intended for adults placing food orders. We don’t knowingly collect data from children under 16.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">08</span> Changes to this policy</h2>
+    <p>If we change how we handle your data, we’ll update this page and the “last updated” date above. Please check back from time to time.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">09</span> Contact us</h2>
+    <p>Questions about your privacy? Reach us any time through the <a href="index.html#contact">contact form</a> or our WhatsApp QR code on the homepage. We’re a small kitchen and we read every message ourselves.</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>© 2026 Pamsit Ltd / Pamskitchen · <a href="index.html">Back to Pamskitchen</a></p>
+</footer>
+
+</body>
+</html>
