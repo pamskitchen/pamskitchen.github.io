@@ -123,11 +123,11 @@
       <div class="accordion-panel">
         <div class="panel-bg" style="background-image: url('assets/idli-fry.jpg');"></div>
         <div class="panel-overlay"></div>
-        <div class="panel-vtitle">Idli Fry</div>
+        <div class="panel-vtitle">Arbi Fry</div>
         <div class="panel-content">
           <div class="panel-num">02 · Pan-tossed</div>
-          <div class="panel-h3">Idli Fry</div>
-          <div class="panel-desc">Yesterday's idli cut and tempered with mustard, peanuts, chilli and curry leaf until the edges crisp.</div>
+          <div class="panel-h3">Arbi Fry</div>
+          <div class="panel-desc">Colocasia root pan-tossed with mustard, peanuts, chilli and curry leaf until the edges crisp.</div>
         </div>
       </div>
       <div class="accordion-panel">
@@ -245,8 +245,8 @@
         <div class="hscroll-card-overlay"></div>
         <div class="hscroll-card-content">
           <div class="hscroll-card-num">06 / Vegetarian</div>
-          <h3>Idli <em>Fry</em></h3>
-          <p>Steamed idli cut and pan-tossed with mustard, peanuts, chilli and curry leaf until the edges crisp.</p>
+          <h3>Arbi <em>Fry</em></h3>
+          <p>Colocasia root pan-tossed with mustard, peanuts, chilli and curry leaf until the edges crisp.</p>
         </div>
       </div>
       <div class="hscroll-card">
@@ -327,19 +327,21 @@
       </p>
       <!-- Formspree contact form — replace xyzabcde with your real Formspree form ID -->
       <form id="fsForm" class="fs-form" action="https://formspree.io/f/mvznqplb" method="POST">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="fs-hp" aria-hidden="true" />
         <div class="fs-row">
           <div class="fs-field">
             <label for="fsName">Name</label>
-            <input type="text" id="fsName" name="name" placeholder="Your name" required />
+            <input type="text" id="fsName" name="name" placeholder="Your name" required minlength="2" />
           </div>
           <div class="fs-field">
             <label for="fsEmail">Email</label>
             <input type="email" id="fsEmail" name="email" placeholder="your@email.com" required />
+            <span class="fs-error" id="fsEmailError" hidden>Please enter a valid email address</span>
           </div>
         </div>
         <div class="fs-field">
           <label for="fsMsg">Message <span class="fs-optional">(optional)</span></label>
-          <textarea id="fsMsg" name="message" rows="3" placeholder="I'd love the weekly menu…"></textarea>
+          <textarea id="fsMsg" name="message" rows="3" maxlength="1000" placeholder="I'd love the weekly menu…"></textarea>
         </div>
         <div class="fs-footer">
           <label class="fs-consent">
@@ -347,38 +349,55 @@
             <span>I agree to receive the weekly menu</span>
           </label>
           <div class="slide-send" id="slideSend">
-            <div class="slide-send-fill" id="ssFill"></div>
-            <div class="slide-send-label" id="ssLabel">Slide to send</div>
-            <div class="slide-send-knob" id="ssKnob" role="button" aria-label="Drag right to send" tabindex="0">
-              <svg width="22" height="14" viewBox="0 0 22 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 1l6 6-6 6"></path><path d="M10 1l6 6-6 6"></path></svg>
+            <div class="slide-send-track">
+              <div class="slide-send-fill" id="ssFill"></div>
+              <div class="slide-send-label" id="ssLabel">Slide to send</div>
+              <div class="slide-send-knob" id="ssKnob" role="button" aria-label="Drag right to send" tabindex="0">
+                <svg width="22" height="14" viewBox="0 0 22 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 1l6 6-6 6"></path><path d="M10 1l6 6-6 6"></path></svg>
+              </div>
             </div>
           </div>
         </div>
       </form>
       <div class="fs-success" id="fsSuccess">Thank you — menu on its way Sunday ✦</div>
 
-      <div class="qr-card">
-        <div class="qr-box" id="qrBox" aria-label="QR code — WhatsApp Pamskitchen for the menu"></div>
-        <div class="qr-label">Scan to WhatsApp us for the menu</div>
-        <a class="qr-tap" href="https://wa.me/447944607622?text=Hi%20Pam%2C%20I%27d%20like%20to%20see%20this%20week%27s%20menu%20please!" target="_blank" rel="noopener">On your phone? Tap here instead</a>
-      </div>
+      <div class="fs-success" id="fsSuccess">Thank you — menu on its way Sunday ✦</div>
+
     </div>
     <div class="contact-right">
       <div class="contact-cols">
         <div class="col">
-          <h4>Order</h4>
+          <h4><span class="icon-phone-wrap"><svg class="col-icon icon-phone" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg><span class="greet-loop" aria-hidden="true"><i>வணக்கம்</i><i>నమస్కారం</i><i>ನಮಸ್ಕಾರ</i><i>नमस्ते</i><i>Hello</i><i>Ola</i></span></span>Connect</h4>
           <a href="tel:+447944607622">+44 794 460 7622</a>
           <p>WhatsApp by 10am</p>
         </div>
         <div class="col">
-          <h4>Email</h4>
+          <h4><span class="icon-email-wrap"><svg class="col-icon icon-email-body" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/></svg><svg class="col-icon icon-email-flap" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 7 8 6 8-6"/></svg><span class="icon-email-letters" aria-hidden="true"><i>A</i><i>B</i><i>C</i></span></span>Email</h4>
           <a href="#" id="obfEmail" rel="nofollow">email us</a>
           <p>Via secure form</p>
         </div>
         <div class="col">
-          <h4>Kitchen</h4>
+          <h4><span class="icon-kitchen-wrap"><svg class="col-icon icon-kitchen" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 8v13h6v-6h6v6h6V8z"/><path d="M15 8V4h2v2.5"/></svg><span class="icon-smoke" aria-hidden="true"><i></i><i></i><i></i></span></span>Kitchen</h4>
           <p>Humber Way</p>
           <p>SL3</p>
+        </div>
+      </div>
+
+      <div class="app-qr-row">
+        <div class="app-qr-card">
+          <div class="qr-box" id="qrAndroid" aria-label="QR code — Pamskitchen on Google Play"></div>
+          <div class="qr-label"><svg class="store-icon" viewBox="0 0 24 24" width="14" height="14"><path fill="#00d2ff" d="M3.6 2.4c-.4.4-.6.9-.6 1.6v16c0 .7.2 1.2.6 1.6l.1.1L13 12.3v-.2L3.7 2.3l-.1.1z"/><path fill="#00f076" d="M16.1 15.4 13 12.3v-.2l3.1-3.1 6.9 3.9c2 1.1 2 2.9 0 4l-6.9 3.9z"/><path fill="#ff3a44" d="M16.1 8.6 13 11.7 3.6 2.4c.3-.4 1-.5 1.8-.1l10.7 6.3z"/><path fill="#ffcf00" d="M16.1 15.4 5.4 21.7c-.8.4-1.5.3-1.8-.1l9.4-9.3 3.1 3.1z"/></svg>Get it on<br>Google Play</div>
+          <a class="qr-tap" href="https://play.google.com/store/apps/details?id=com.pamsfood.myapp" target="_blank" rel="noopener">Open Google Play</a>
+        </div>
+        <div class="app-qr-card">
+          <div class="qr-box" id="qrIos" aria-label="QR code — Pamskitchen on the App Store"></div>
+          <div class="qr-label"><svg class="store-icon" viewBox="0 0 24 24" width="14" height="14" fill="#fff"><path d="M16.4 1.6c.1 1.1-.3 2.2-1 3-.7.9-1.9 1.6-3 1.5-.1-1.1.4-2.2 1-2.9.8-.9 2-1.5 3-1.6zM20 17c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.2-4 3.2-1.5 0-1.9-1-3.9-1-2 0-2.5 1-3.9 1-1.7 0-3-1.6-4-3-1.9-2.7-2.5-6.3-1-9 .8-1.4 2.2-2.3 3.7-2.3 1.4 0 2.3 1 3.9 1 1.5 0 2.2-1 3.9-1 1.4 0 2.9.8 3.7 2-3.2 1.7-2.7 6.3.1 7.4z"/></svg>Download on the<br>App Store</div>
+          <a class="qr-tap" href="https://apps.apple.com/gb/app/pams-kitchen/id6763037716" target="_blank" rel="noopener">Open App Store</a>
+        </div>
+        <div class="app-qr-card">
+          <div class="qr-box" id="qrGoogle" aria-label="QR code — Leave Pamskitchen a Google review"></div>
+          <div class="qr-label"><svg class="store-icon" viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M22.5 12.2c0-.8-.1-1.5-.2-2.2H12v4.3h5.9c-.3 1.4-1 2.6-2.2 3.4v2.8h3.6c2.1-1.9 3.2-4.8 3.2-8.3z"/><path fill="#34A853" d="M12 23c3 0 5.4-1 7.3-2.6l-3.6-2.8c-1 .7-2.2 1.1-3.7 1.1-2.8 0-5.2-1.9-6-4.5H2.3v2.9C4.2 20.6 7.8 23 12 23z"/><path fill="#FBBC05" d="M6 14.2c-.2-.7-.3-1.4-.3-2.2s.1-1.5.3-2.2V7H2.3C1.5 8.6 1 10.3 1 12s.5 3.4 1.3 5l3.7-2.8z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .6 4.2 1.6l3.1-3.1C17.4 2.1 15 1 12 1 7.8 1 4.2 3.4 2.3 7l3.7 2.9c.8-2.6 3.2-4.5 6-4.5z"/></svg>Rate us on<br>Google</div>
+          <a class="qr-tap" href="https://maps.app.goo.gl/JZd3sdm1EjZ68eTL8" target="_blank" rel="noopener">Leave a review</a>
         </div>
       </div>
     </div>
@@ -437,14 +456,19 @@
 <!-- QR code generator (local-friendly, tiny) -->
 <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
 <script>
-// ── WhatsApp QR code ──
+// ── App store + Google review QR codes ──
 (function () {
-  var box = document.getElementById('qrBox');
-  if (!box || typeof qrcode === 'undefined') return;
-  var qr = qrcode(0, 'M');
-  qr.addData('https://wa.me/447944607622?text=Hi%20Pam%2C%20I%27d%20like%20to%20see%20this%20week%27s%20menu%20please!');
-  qr.make();
-  box.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+  function render(id, url) {
+    var box = document.getElementById(id);
+    if (!box || typeof qrcode === 'undefined') return;
+    var qr = qrcode(0, 'L');
+    qr.addData(url);
+    qr.make();
+    box.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 4, scalable: true });
+  }
+  render('qrAndroid', 'https://play.google.com/store/apps/details?id=com.pamsfood.myapp');
+  render('qrIos', 'https://apps.apple.com/gb/app/pams-kitchen/id6763037716');
+  render('qrGoogle', 'https://maps.app.goo.gl/JZd3sdm1EjZ68eTL8');
 })();
 </script>
 
@@ -849,7 +873,30 @@ document.addEventListener('keydown', function (e) {
   var knob   = document.getElementById('ssKnob');
   var fill   = document.getElementById('ssFill');
   var label  = document.getElementById('ssLabel');
+  var emailInput = document.getElementById('fsEmail');
+  var emailError = document.getElementById('fsEmailError');
   if (!form || !slider) return;
+
+  var pageLoadTime = Date.now();
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function validEmail() {
+    var ok = EMAIL_RE.test(emailInput.value.trim());
+    emailError.hidden = ok;
+    emailInput.style.borderColor = ok ? '' : '#e0453c';
+    return ok;
+  }
+  emailInput.addEventListener('blur', validEmail);
+  emailInput.addEventListener('input', function () { if (!emailError.hidden) validEmail(); });
+
+  function humanChecksPass() {
+    // Honeypot: bots fill every field, humans never see/fill this one
+    var hp = form.querySelector('[name="_gotcha"]');
+    if (hp && hp.value) return false;
+    // Time-trap: a real visitor takes at least a couple seconds to read + type
+    if (Date.now() - pageLoadTime < 2500) return false;
+    return true;
+  }
 
   var sending = false, sent = false;
   var dragging = false, startX = 0, knobX = 0, maxX = 0;
@@ -912,7 +959,8 @@ document.addEventListener('keydown', function (e) {
 
   knob.addEventListener('pointerdown', function (e) {
     if (sending || sent) return;
-    if (!form.checkValidity()) { form.reportValidity(); return; }
+    if (!form.checkValidity() || !validEmail()) { form.reportValidity(); return; }
+    if (!humanChecksPass()) { alert('Please take a moment before sending — try again shortly.'); return; }
     dragging = true;
     maxX = slider.clientWidth - knob.offsetWidth - 8;
     startX = e.clientX - knobX;
